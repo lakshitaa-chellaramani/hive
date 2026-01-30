@@ -39,6 +39,7 @@ from .file_system_toolkits.view_file import register_tools as register_view_file
 from .file_system_toolkits.write_to_file import register_tools as register_write_to_file
 from .hubspot_tool import register_tools as register_hubspot
 from .pdf_read_tool import register_tools as register_pdf_read
+from .slack_tool import register_tools as register_slack
 from .web_scrape_tool import register_tools as register_web_scrape
 from .web_search_tool import register_tools as register_web_search
 
@@ -67,6 +68,7 @@ def register_all_tools(
     # web_search supports multiple providers (Google, Brave) with auto-detection
     register_web_search(mcp, credentials=credentials)
     register_hubspot(mcp, credentials=credentials)
+    register_slack(mcp, credentials=credentials)
 
     # Register file system toolkits
     register_view_file(mcp)
@@ -109,6 +111,13 @@ def register_all_tools(
         "hubspot_get_deal",
         "hubspot_create_deal",
         "hubspot_update_deal",
+        "slack_send_message",
+        "slack_list_channels",
+        "slack_get_channel_history",
+        "slack_list_users",
+        "slack_get_user_info",
+        "slack_add_reaction",
+        "slack_get_channel_info",
     ]
 
 
